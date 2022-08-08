@@ -1,4 +1,7 @@
 import org.opencv.core.Core;
+import org.opencv.core.Mat;
+import org.opencv.imgcodecs.Imgcodecs;
+import org.opencv.videoio.VideoCapture;
 
 /**
  * The OpenCVConsoleApp class implements an application that reads from a
@@ -13,5 +16,23 @@ public class OpenCVConsoleApp {
 
     public static void main(String[] args){
         System.out.println("Hello, OpenCV " + Core.VERSION + "!");
+
+        Camera camera = new Camera();
+        camera.captureFrame();
+    }
+}
+
+class Camera {
+    private VideoCapture capture;
+    private Mat image;
+    public void captureFrame() {
+        // argument is camera index
+        capture = new VideoCapture(0);
+        image = new Mat();
+
+        capture.read(image);
+
+        String filename = "shot.jpg";
+        Imgcodecs.imwrite(filename, image);
     }
 }
