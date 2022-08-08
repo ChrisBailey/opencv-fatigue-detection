@@ -5,9 +5,11 @@ import org.opencv.videoio.VideoCapture;
 
 /**
  * The OpenCVConsoleApp class implements an application that reads from a
- * camera and performs drowsiness detection. This is accomplished by applying
- * facial landmark detection to extract the eye regions and computing the eye
- * aspect ratio. A lower ratio indicates closed eyelids.
+ * camera and performs drowsiness detection.
+ *
+ * <p>This is accomplished by applying facial landmark detection to extract the
+ * eye regions and computing the eye aspect ratio. A lower ratio indicates
+ * closed eyelids.
  */
 public class OpenCVConsoleApp {
 
@@ -22,9 +24,18 @@ public class OpenCVConsoleApp {
     }
 }
 
+
+/**
+ * The camera class provides utility methods for accessing the system camera
+ * using OpenCV.
+ */
 class Camera {
     private VideoCapture capture;
     private Mat image;
+
+    /**
+     * Get a single frame from the camera
+     */
     public void captureFrame() {
         // argument is camera index
         capture = new VideoCapture(0);
