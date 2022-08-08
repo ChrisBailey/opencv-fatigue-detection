@@ -6,3 +6,9 @@ The OpenCVConsoleApp class implements an application that reads from a camera an
 
 ### Build info
 The appropriate opencv-xxx.jar needs to be added to your project as a dependency.
+
+## Facemark Model Trainer
+A utility to train a Facemark model from an image set.
+
+### Build info
+The appropriate opencv-xxx.jar needs to be added to your project as a dependency.
