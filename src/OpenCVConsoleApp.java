@@ -33,16 +33,24 @@ class Camera {
     private VideoCapture capture;
     private Mat image;
 
+    public Camera() {
+        // argument is camera index
+        capture = new VideoCapture(0);
+
+        image = new Mat();
+    }
+
     /**
      * Get a single frame from the camera
      */
     public void captureFrame() {
-        // argument is camera index
-        capture = new VideoCapture(0);
-        image = new Mat();
-
         capture.read(image);
+    }
 
+    /**
+     * Write the current captured image from the camera
+     */
+    public void writeImage() {
         String filename = "shot.jpg";
         Imgcodecs.imwrite(filename, image);
     }
